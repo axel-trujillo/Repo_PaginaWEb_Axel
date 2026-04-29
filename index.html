@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axel Trujillo | Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        [v-cloak] { display: none; }
+        .bg-dark-pro { background-color: #0f172a; }
+        .accent-blue { color: #38bdf8; }
+        .border-accent { border-color: #38bdf8; }
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-dark-pro text-slate-200 font-sans selection:bg-sky-500/30">
+
+<div id="app" v-cloak>
+    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tighter accent-blue">AXEL<span class="text-white">TRUJILLO</span></span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#inicio" class="hover:text-sky-400 transition">Inicio</a>
+                <a href="#about" class="hover:text-sky-400 transition">Perfil</a>
+                <a href="#skills" class="hover:text-sky-400 transition">Skills</a>
+                <a href="#logros" class="hover:text-sky-400 transition">Logros</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="text-center">
+            <div class="mb-6 inline-block px-3 py-1 border border-sky-500/30 rounded-full bg-sky-500/10 text-sky-400 text-xs font-bold uppercase tracking-widest">
+                Python & Cloud Developer
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6">
+                Precisión en el <span class="accent-blue italic">Código,</span><br>
+                agilidad en la <span class="accent-blue">Cancha.</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl mb-10">
+                Hola, soy Axel. Un desarrollador de 18 años especializado en Python y AWS, 
+                que aplica la disciplina del voleibol de alto rendimiento en cada proyecto de software.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#skills" class="bg-sky-600 hover:bg-sky-500 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg shadow-sky-900/20">
+                    Ver Tecnologías
+                </a>
+                <div class="flex items-center justify-center gap-6 px-4">
+                    <a href="https://github.com" target="_blank" class="text-2xl text-slate-400 hover:text-white transition"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="text-2xl text-slate-400 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-24 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-4">
+                <span class="w-12 h-1 bg-sky-500"></span> Perfil Profesional
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-slate-400 leading-relaxed text-lg">
+                    <p>
+                        Desde los 17 años, mi curiosidad por la tecnología me llevó al mundo de Python. Mi formación no es solo técnica; mi experiencia como <span class="text-white font-medium">tesorero de curso</span> me enseñó liderazgo y gestión de recursos.
+                    </p>
+                    <p>
+                        Como <span class="text-white font-medium italic">atleta de alto rendimiento en Voleibol</span>, he desarrollado una disciplina férrea. En el campo defiendo cada balón, y en la terminal, defiendo la integridad de cada línea de código.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700">
+                        <div class
