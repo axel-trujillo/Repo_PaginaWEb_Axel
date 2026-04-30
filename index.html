@@ -1,75 +1,126 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axel Trujillo | Portafolio</title>
+    <title>Axel Trujillo | Full Stack & Cloud</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        [v-cloak] { display: none; }
-        .bg-dark-pro { background-color: #0f172a; }
-        .accent-blue { color: #38bdf8; }
-        .border-accent { border-color: #38bdf8; }
-        .hover-scale { transition: transform 0.3s ease; }
-        .hover-scale:hover { transform: scale(1.05); }
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .aws-highlight {
+            border: 2px solid #ff9900;
+            box-shadow: 0 0 15px rgba(255, 153, 0, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
-<body class="bg-dark-pro text-slate-200 font-sans selection:bg-sky-500/30">
+<body class="antialiased">
 
-<div id="app" v-cloak>
-    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-xl font-bold tracking-tighter accent-blue">AXEL<span class="text-white">TRUJILLO</span></span>
-            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+    <nav class="fixed w-full z-50 glass py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tighter text-gradient underline decoration-sky-500">AT</span>
+            <div class="space-x-8 hidden md:flex font-medium text-sm">
                 <a href="#inicio" class="hover:text-sky-400 transition">Inicio</a>
-                <a href="#about" class="hover:text-sky-400 transition">Perfil</a>
-                <a href="#skills" class="hover:text-sky-400 transition">Skills</a>
-                <a href="#logros" class="hover:text-sky-400 transition">Logros</a>
+                <a href="#sobre-mi" class="hover:text-sky-400 transition">Perfil</a>
+                <a href="#stack" class="hover:text-sky-400 transition">Habilidades</a>
+                <a href="#proyectos" class="hover:text-sky-400 transition">Proyectos</a>
             </div>
         </div>
     </nav>
 
-    <header id="inicio" class="min-h-screen flex items-center justify-center pt-20 px-6">
-        <div class="text-center">
-            <div class="mb-6 inline-block px-3 py-1 border border-sky-500/30 rounded-full bg-sky-500/10 text-sky-400 text-xs font-bold uppercase tracking-widest">
-                Python & Cloud Developer
-            </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6">
-                Precisión en el <span class="accent-blue italic">Código,</span><br>
-                agilidad en la <span class="accent-blue">Cancha.</span>
-            </h1>
-            <p class="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl mb-10">
-                Hola, soy Axel. Un desarrollador de 18 años especializado en Python y AWS, 
-                que aplica la disciplina del voleibol de alto rendimiento en cada proyecto de software.
+    <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="text-center" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">Axel Trujillo</h1>
+            <h2 class="text-xl md:text-2xl text-sky-400 font-light mb-6">Desarrollador Full Stack & Arquitecto Cloud en formación</h2>
+            <p class="max-w-2xl mx-auto text-gray-400 text-lg mb-10 italic">
+                "Combinando la precisión de un líbero en la cancha con la escalabilidad de la nube."
             </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#skills" class="bg-sky-600 hover:bg-sky-500 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg shadow-sky-900/20">
-                    Ver Tecnologías
-                </a>
-                <div class="flex items-center justify-center gap-6 px-4">
-                    <a href="https://github.com" target="_blank" class="text-2xl text-slate-400 hover:text-white transition"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com" target="_blank" class="text-2xl text-slate-400 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+            <a href="#proyectos" class="bg-sky-600 hover:bg-sky-500 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 inline-block">
+                Ver Proyectos
+            </a>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="py-24 px-6 bg-slate-900/50">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-right">El Factor Diferenciador</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass p-8 rounded-2xl" data-aos="zoom-in">
+                    <div class="text-sky-400 text-3xl mb-4"><i class="fas fa-volleyball-ball"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Disciplina Deportiva</h3>
+                    <p class="text-gray-400">Como líbero destacado, entiendo la importancia de la defensa, la rapidez de reflejos y el soporte constante al equipo. Mi código es mi zona de defensa.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-indigo-400 text-3xl mb-4"><i class="fas fa-gamepad"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Estratega en el Juego</h3>
+                    <p class="text-gray-400">Rango Platino en League of Legends. Capacidad probada de análisis estratégico, toma de decisiones bajo presión y mejora continua.</p>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <section id="about" class="py-24 bg-slate-900/50">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-4">
-                <span class="w-12 h-1 bg-sky-500"></span> Perfil Profesional
-            </h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 text-slate-400 leading-relaxed text-lg">
-                    <p>
-                        Desde los 17 años, mi curiosidad por la tecnología me llevó al mundo de Python. Mi formación no es solo técnica; mi experiencia como <span class="text-white font-medium">tesorero de curso</span> me enseñó liderazgo y gestión de recursos.
-                    </p>
-                    <p>
-                        Como <span class="text-white font-medium italic">atleta de alto rendimiento en Voleibol</span>, he desarrollado una disciplina férrea. En el campo defiendo cada balón, y en la terminal, defiendo la integridad de cada línea de código.
-                    </p>
+    <section id="stack" class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Stack Técnico</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass p-6 rounded-xl text-center hover:border-sky-500 transition cursor-default">
+                    <i class="fab fa-python text-4xl mb-3 text-yellow-500"></i>
+                    <p class="font-semibold text-sm">Python</p>
                 </div>
-                <div class="grid grid-cols-2 gap-4 text-center">
-                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700">
-                        <div class
+                <div class="glass p-6 rounded-xl text-center hover:border-sky-500 transition cursor-default">
+                    <i class="fab fa-js text-4xl mb-3 text-yellow-400"></i>
+                    <p class="font-semibold text-sm">JavaScript</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center hover:border-sky-500 transition cursor-default">
+                    <i class="fab fa-html5 text-4xl mb-3 text-orange-500"></i>
+                    <p class="font-semibold text-sm">HTML5 / CSS3</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center hover:border-sky-500 transition cursor-default">
+                    <i class="fab fa-git-alt text-4xl mb-3 text-red-500"></i>
+                    <p class="font-semibold text-sm">Git / GitHub</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center md:col-span-4 aws-highlight flex items-center justify-center gap-4 group transition-all" data-aos="flip-up">
+                    <i class="fab fa-aws text-5xl text-[#ff9900]"></i>
+                    <div>
+                        <h4 class="text-xl font-bold">AWS Infrastructure</h4>
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Especialización Principal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="py-24 px-6 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Proyectos Destacados</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass rounded-t-2xl overflow-hidden border-b-4 border-yellow-500 group">
+                    <div class="h-40 bg-slate-800 flex items-center justify-center">
+                        <i class="fas fa-robot text-5xl group-hover:scale-110 transition"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Python Automation</h3>
+                        <p class="text-sm text-gray-400 mb-4">Script desarrollado para automatizar tareas repetitivas de gestión de archivos y optimización.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[10px] bg-slate-800 px-2 py-1 rounded">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-t-2xl overflow-hidden border-b-4 border-sky-500 group">
+                    <div class="h-40 bg-slate-800 flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-5xl group
