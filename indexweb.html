@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Técnico: F-Strings & Reportes</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --term-bg: #161b22;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --green: #3fb950;
+            --orange: #d29922;
+            --border-color: #30363d;
+            --font-mono: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-mono);
+            color: var(--accent-color);
+        }
+
+        .concept-card {
+            background: var(--term-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+
+        /* Comparativa Antes vs Después */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .code-box {
+            background: #000;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            position: relative;
+            border-left: 4px solid var(--orange);
+        }
+
+        .code-box.optimized {
+            border-left-color: var(--green);
+        }
+
+        .code-box::before {
+            content: attr(data-label);
+            display: block;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            color: #8b949e;
+            margin-bottom: 10px;
+        }
+
+        /* Terminal Simulation */
+        .terminal-window {
+            background: #000;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .terminal-header {
+            background: #30363d;
+            padding: 10px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green-dot { background: #27c93f; }
+
+        .terminal-body {
+            padding: 20px;
+            font-family: var(--font-mono);
+            color: #fff;
+            min-height: 200px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background: var(--green);
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        button {
+            background: var(--green);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-family: var(--font-mono);
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover { opacity: 0.8; }
+
+        .tag {
+            background: #238636;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>>_ MANUAL TÉCNICO: F-STRINGS</h1>
+        <p>Dominando el formateo avanzado de datos en Python para reportes profesionales.</p>
+    </header>
+
+    <section class="concept-card">
+        <h2>1. Definición del Concepto</h2>
+        <p>Las <strong>f-strings</strong> (Formatted String Literals), introducidas en Python 3.6, permiten embeber expresiones dentro de cadenas de texto de forma legible y rápida. Su potencia radica en el <strong>Mini-Lenguaje de Especificación de Formato</strong>, que permite controlar alineación, precisión y relleno sin librerías externas.</p>
+    </section>
+
+    <section>
+        <h2>2. Antes vs. Después</h2>
+        <div class="comparison-grid">
+            <div class="code-box" data-label="Ineficiente (.format)">
+<pre>
+# Difícil de leer y alinear
+print("{0:10} | {1:5}".format(
+    prod, cant
+))
+</pre>
+            </div>
+            <div class="code-box optimized" data-label="Optimizado (f-strings)">
+<pre>
+# Legible y preciso
+print(f"{prod:<10} | {cant:^5}")
+</pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="concept-card" style="text-align: center; margin-top: 40px;">
+        <h2>3. Anatomía de una F-String</h2>
+        <p>Estructura técnica del especificador:</p>
+        <div style="background: #000; padding: 20px; display: inline-block; border-radius: 8px; border: 1px dashed var(--accent-color);">
+            <code style="font-size: 1.5em;">{ valor : <span style="color:var(--orange)">relleno</span> <span style="color:var(--green)">alineación</span> <span style="color:var(--accent-color)">ancho</span> . <span style="color:#f85149">precisión</span> }</code>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Simulación de Ejecución</h2>
+        <p>Haz clic en el botón para generar el reporte tabulado dinámicamente.</p>
+        
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green-dot"></div>
+                <span style="margin-left: 10px; font-size: 0.8em; color: #8b949e;">bash — generator.py</span>
+            </div>
+            <div class="terminal-body" id="terminal-output">
+                <span style="color: var(--green);">user@python:~$</span> python report_gen.py<br>
+                <span id="output-text">Esperando ejecución...</span><span class="cursor"></span>
+            </div>
+        </div>
+        <button onclick="runSimulation()">EJECUTAR SCRIPT</button>
+    </section>
+</div>
+
+<script>
+    function runSimulation() {
+        const output = document.getElementById('output-text');
+        const items = [
+            {n: "Teclado Mec...", c: 2, p: 45.99},
+            {n: "Monitor 24\"...", c: 1, p: 120.50}
+        ];
+        
+        let ticket = "<br>==================================<br>";
+        ticket += "        TICKET DE COMPRA        <br>";
+        ticket += "==================================<br>";
+        ticket += "Item           Cant      Precio<br>";
+        ticket += "----------------------------------<br>";
+        
+        items.forEach(i => {
+            // Simulación de alineación f-string
+            let name = i.n.padEnd(15, ' ');
+            let cant = i.c.toString().padStart(4, ' ');
+            let price = `$${i.p.toFixed(2)}`.padStart(11, ' ');
+            ticket += `${name}${cant}${price}<br>`;
+        });
+        
+        ticket += "==================================<br>";
+        ticket += "TOTAL:                   $212.48<br>";
+        
+        output.innerHTML = ticket;
+    }
+</script>
+
+</body>
+</html>
